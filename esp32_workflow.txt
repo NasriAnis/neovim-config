@@ -1,0 +1,9 @@
+new project:
+source esp-idf/export.sh
+idf.py create-project YourNewProject
+cd YourNewProject
+idf.py set-target esp32s3   # or whatever chip
+idf.py build
+idf.py -B build.clang -D IDF_TOOLCHAIN=clang reconfigure # this only once for the lsp
+nvim .
+
