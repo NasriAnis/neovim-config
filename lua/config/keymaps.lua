@@ -13,10 +13,6 @@ vim.keymap.set("n", "<leader>uh", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay hints" })
 
--- vim.keymap.set("n", "<leader>uc", function()
---   require("util.colorscheme").pick()
--- end, { desc = "Select colorscheme (persisted)" })
---
--- vim.api.nvim_create_user_command("Colorscheme", function()
---   require("util.colorscheme").pick()
--- end, {})
+vim.keymap.set("n", "<leader>r", function()
+  return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true })
